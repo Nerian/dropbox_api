@@ -17,7 +17,7 @@ module DropboxApi
           namespace_id: self.namespace_id
         }
         middleware.apply(connection) do
-          connection.request 'Bearer', @oauth_bearer
+          connection.request :authorization, 'Bearer', @oauth_bearer
 
           yield connection
         end
